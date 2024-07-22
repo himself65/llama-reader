@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = ["packages/*"]
+
+[workspace.package]
+authors = ["Alex Yang <himself65@outlook.com>"]
+categories = ["File Reader"]
+description = "File reader collection for LlamaIndex"
+edition = "2021"
+keywords = ["JavaScript", "TypeScript", "Python"]
+license = "MIT"
+homepage = ""
+repository = ""
+rust-version = "1.74"
+
+[workspace.dependencies]
+llamareader = { path = "packages/core" }
+llamareader-node = { path = "packages/node" }
+llamareader-python = { path = "packages/python" }
+
+[profile.release]
+lto = true
+strip = "symbols"

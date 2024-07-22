@@ -1,0 +1,70 @@
+{
+  "name": "@llamaindex/csv-reader",
+  "version": "0.0.1",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "browser": "browser.js",
+  "napi": {
+    "binaryName": "llamaindex-csv-reader",
+    "packageName": "@llamaindex/csv-reader",
+    "targets": [
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-gnu",
+      "i686-pc-windows-msvc",
+      "armv7-unknown-linux-gnueabihf",
+      "aarch64-linux-android",
+      "x86_64-unknown-freebsd",
+      "aarch64-unknown-linux-musl",
+      "aarch64-pc-windows-msvc",
+      "armv7-linux-androideabi",
+      "wasm32-wasi-preview1-threads"
+    ]
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "esm.mjs",
+    "register.mjs",
+    "browser.js"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "^3.0.0-alpha.62",
+    "@taplo/cli": "^0.7.0",
+    "ava": "^6.1.3",
+    "benny": "^3.7.1",
+    "chalk": "^5.3.0",
+    "emnapi": "^1.1.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.3.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "ava": {
+    "require": [
+      "tsx"
+    ],
+    "timeout": "2m",
+    "workerThreads": false,
+    "environmentVariables": {
+      "TS_NODE_PROJECT": "./tsconfig.json"
+    }
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "test": "ava",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "packageManager": "pnpm@9.5.0"
+}

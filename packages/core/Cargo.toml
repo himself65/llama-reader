@@ -1,0 +1,23 @@
+[package]
+name = "llamareader"
+version = "0.1.0"
+authors.workspace = true
+description.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+categories.workspace = true
+include = ["/src"]
+
+[dependencies]
+epub = "2.1.2"
+napi = { version = "3.0.0-alpha.8", default-features = false, features = ["napi9"], optional = true }
+napi-derive = { version = "3.0.0-alpha.6", optional = true }
+pyo3 = { version = "0.22.2", features = ["extension-module"], optional = true }
+
+[features]
+node = ["dep:napi", "dep:napi-derive"]
+python = ["dep:pyo3"]
