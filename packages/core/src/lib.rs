@@ -1,8 +1,5 @@
 #![deny(clippy::all)]
 
-#[cfg(feature = "python")]
-mod python;
-
 use epub::doc::EpubDoc;
 
 #[cfg_attr(feature = "node", napi_derive::napi(object))]
